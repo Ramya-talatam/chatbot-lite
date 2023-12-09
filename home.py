@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session ,jsonify
+# from waitress import serve
 from werkzeug.security import generate_password_hash, check_password_hash
 import json
 import os
@@ -92,5 +93,7 @@ def analyze():
     }
     return jsonify(response)
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     # serve(app, host='127.0.0.1',port=5000, threads=4)
+#     app.run()
+    
