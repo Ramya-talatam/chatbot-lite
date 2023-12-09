@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request, jsonify
-import pandas as pd
-import time
+# import pandas as pd
+# import time
 import re
 from textblob import TextBlob as tb
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import LabelEncoder
-import spacy
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.pipeline import Pipeline
+# from sklearn.preprocessing import LabelEncoder
+# import spacy
 message=""
 q=""
 intents = {
