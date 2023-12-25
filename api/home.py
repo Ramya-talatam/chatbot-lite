@@ -261,8 +261,8 @@ def login():
 
 @app.route('/chatbot')
 def chatbot():
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
+    # if not session.get('logged_in'):
+    #     return redirect(url_for('login'))
     return render_template('botindex.html')
 @app.route('/record_answer', methods=['POST'])
 def record_answer():
