@@ -4,7 +4,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import json
 import os
 from chatbot import getquestion, recordanswer
-from journalflask import fun
 app = Flask(__name__ ,static_url_path='/static')
 app.secret_key = 'bluehawkhunting'
 
@@ -81,17 +80,17 @@ def get_question():
 def logout():
     session['logged_in'] = False
     return redirect(url_for('login'))
-@app.route('/analyze', methods=['POST'])
-def analyze():
-    journal_text = request.form.get('journalText')
-    positive_words, negative_words, focused_words,op= fun(journal_text)
-    response = {
-        'positive_words': positive_words,
-        'negative_words': negative_words,
-        'focused_words': focused_words,
-        'overall_polarity': op
-    }
-    return jsonify(response)
+# @app.route('/analyze', methods=['POST'])
+# def analyze():
+#     journal_text = request.form.get('journalText')
+#     positive_words, negative_words, focused_words,op= fun(journal_text)
+#     response = {
+#         'positive_words': positive_words,
+#         'negative_words': negative_words,
+#         'focused_words': focused_words,
+#         'overall_polarity': op
+#     }
+#     return jsonify(response)
 
 # if __name__ == '__main__':
 #     # serve(app, host='127.0.0.1',port=5000, threads=4)
